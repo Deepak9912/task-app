@@ -1,5 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+
+const Task = [
+  {
+    id: 'id1',
+    name: 'Laundry'
+  },
+  {
+    id: 'id2',
+    name: 'Shopping'
+  },
+  {
+    id: 'id3',
+    name: 'Cooking'
+  },
+]
+
 
 function App() {
   return (

@@ -1,8 +1,14 @@
-const Input = () => {
+const Input = (props) => {
     return (
-        <div>
-
-        </div>
+        <React.Fragment>
+            <div>
+            <label>Title</label>
+            <input type="text" name="name"></input>
+            </div>
+            <div>
+                
+            </div>
+        </React.Fragment>
     )
 }
 
