@@ -1,14 +1,11 @@
+import classes from './Input.module.css';
+
+
 const Input = (props) => {
     return (
-        <React.Fragment>
-            <div>
-            <label>Title</label>
-            <input type="text" name="name"></input>
+            <div className={classes.form}>
+                <div>{props.task}</div>
             </div>
-            <div>
-                
-            </div>
-        </React.Fragment>
     )
 }
 
