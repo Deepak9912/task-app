@@ -17,12 +17,13 @@ const TaskForm = () => {
             task: enteredTask
         }
         console.log(taskData);
+        setEnteredTask('');
     }
 
     return <form className={classes.form} onSubmit={submitHandler}>
         <div>
             <label>Add task</label>
-            <input type="text" onChange={addInputHandler} />
+            <input type="text" value={enteredTask} onChange={addInputHandler} />
         </div>
         <div>
             <button type="submit">Add task</button>
