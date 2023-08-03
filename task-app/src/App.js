@@ -1,5 +1,6 @@
 import './App.css';
-import Input from './components/Input.js';
+import InputItem from './components/Input.js';
+import TaskForm from './components/TaskFrom';
 
 const taskItems = [
   {id: 'cd1', task: 'laundry'},
@@ -11,10 +12,11 @@ const taskItems = [
 function App() {
   return (
     <div>
-      <Input id={taskItems[0].id} task={taskItems[0].task} />
-      <Input id={taskItems[1].id} task={taskItems[1].task}/>
-      <Input id={taskItems[2].id} task={taskItems[2].task}/>
-      <Input id={taskItems[3].id} task={taskItems[3].task}/>
+      <TaskForm />
+      <InputItem tasks={taskItems[0]}/>
+      <InputItem tasks={taskItems[1]}/>
+      <InputItem tasks={taskItems[2]}/>
+      <InputItem tasks={taskItems[3]}/>
     </div>
   );
 }
