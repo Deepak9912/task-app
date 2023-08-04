@@ -2,7 +2,7 @@ import React from "react";
 import {useState}  from 'react';
 import classes from './Input.module.css';
 
-const TaskForm = () => {
+const TaskForm = (props) => {
 
     const [enteredTask, setEnteredTask] = useState('')
 
@@ -16,7 +16,10 @@ const TaskForm = () => {
         const taskData = {
             task: enteredTask
         }
+        
         console.log(taskData);
+        props.onSaveTaskData(taskData);
+        props.onAddTask(taskData);
         setEnteredTask('');
     }
 

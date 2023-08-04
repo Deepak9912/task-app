@@ -18,6 +18,7 @@ const InputItem = (props) => {
 
     return (
             <div className={classes.form}>
+                {props.taskItems.map(task => <InputItem task={task.task} />)}
                 <div>{props.tasks.task}</div>
                 <button onClick={editHandler}>{edit}</button> 
                 <button onClick={deleteHandler}>{deleted}</button>    
