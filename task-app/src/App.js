@@ -1,33 +1,25 @@
+import { useState } from 'react';
 import './App.css';
-import InputItem from './components/Input.js';
+import TaskList from './components/TaskList.js';
 import TaskForm from './components/TaskForm';
-
-const taskItems = [
-  {id: 'cd1', task: 'laundry'},
-  {id: 'cd2', task: 'Washing'}
-]
-
-const addTaskHandler = task => {
-  console.log('in app.js');
-  console.log(task);
-}
 
 
 function App() {
 
+  const [taskInput, setTaskInput] = useState([]);
+
   const saveTaskDataHandler = (enteredTaskData) => {
-    const tasksData = {
-      ...enteredTaskData,
-      id: Math.random().toString()
-    }
-    console.log(tasksData);
+    setTaskInput([...taskInput, enteredTaskData])
   };
 
   return (
     <div>
-      <TaskForm onSaveTaskData={saveTaskDataHandler} onAddTask={addTaskHandler}/>
-      <InputItem tasks={taskItems[0]}/>
-      <InputItem tasks={taskItems[1]}/>
+      <TaskForm onSaveTaskData={saveTaskDataHandler} />
+      {TaskList.map((taskItem, i) => {
+        return (
+          <TaskList item={taskItem} index={i} />
+        )
+      })}
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from "react";
-import {useState}  from 'react';
-import classes from './Input.module.css';
+import { useState } from 'react';
 
 const TaskForm = (props) => {
 
@@ -11,27 +10,18 @@ const TaskForm = (props) => {
         console.log(event.target.value);
     };
 
-    const submitHandler = (event) => {
-        event.preventDefault();
-        const taskData = {
-            task: enteredTask
-        }
-        
-        console.log(taskData);
-        props.onSaveTaskData(taskData);
-        props.onAddTask(taskData);
+    const buttonHandler = () => {
+        props.onSaveTaskData(enteredTask);
         setEnteredTask('');
     }
 
-    return <form className={classes.form} onSubmit={submitHandler}>
+    return <div>
         <div>
-            <label>Add task</label>
-            <input type="text" value={enteredTask} onChange={addInputHandler} />
+            <label>Add task: </label>
+            <input type="text" value={enteredTask} onChange={addInputHandler} placeholder="add task"/>
+            <button type="submit" onClick={buttonHandler}>Add task</button>
         </div>
-        <div>
-            <button type="submit">Add task</button>
-        </div>
-    </form>
+    </div>
 }
 
 export default TaskForm;
