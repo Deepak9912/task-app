@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <TaskForm onSaveTaskData={saveTaskDataHandler} />
-      {TaskList.map((taskItem, i) => {
+      {taskInput.map((taskItem, i) => {
         return (
           <TaskList item={taskItem} index={i} />
         )

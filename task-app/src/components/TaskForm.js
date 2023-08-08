@@ -7,7 +7,6 @@ const TaskForm = (props) => {
 
     const addInputHandler = (event) => {
         setEnteredTask(event.target.value);
-        console.log(event.target.value);
     };
 
     const buttonHandler = () => {
